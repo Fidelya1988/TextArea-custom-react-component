@@ -1,0 +1,21 @@
+.color {
+    width: 20px;
+}
+
+.bold {
+    font-weight: 1000;
+}
+
+.cursiv {
+    font-style: italic;
+}
+
+.emphatic {
+    text-decoration: underline;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+
+}
