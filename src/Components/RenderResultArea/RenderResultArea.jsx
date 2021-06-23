@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './renderarea.module.css'
+
 const RenderResultArea =(props)=> {
 
     return (
