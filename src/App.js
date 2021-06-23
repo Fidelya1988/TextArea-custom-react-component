@@ -1,16 +1,12 @@
+import './App.css'
+import { TextareaForm } from './Components/TextAreaForm'
 
-import './App.css';
-
-import TextareaForm from './Components/TextAreaForm';
-function App(){
-
-
+const App = () => {
   return (
     <div className="App">
-<TextareaForm/>
-
+      <TextareaForm />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
