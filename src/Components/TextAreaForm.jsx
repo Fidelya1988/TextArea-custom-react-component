@@ -1,25 +1,29 @@
-import styles from './textArea.module.css'
-import RenderResultArea from './RenderResultArea/RenderResultArea'
-import { useState } from 'react'
+import styles from "./textArea.module.css";
+import RenderResultArea from "./RenderResultArea/RenderResultArea";
+import { useState } from "react";
 
 export const TextareaForm = () => {
-  const [result, setResult] = useState('Hello!')
-  const [resultStyle, setResultStyle] = useState({
-    fontStyle: 'normal',
-    color: 'black',
-    textDecoration: 'none',
-    fontWeight: 'normal',
-    fontSize: '14px',
+  const textStyle = {
+    fontStyle: "normal",
+    color: "black",
+    textDecoration: "none",
+    fontWeight: "normal",
+    fontSize: "14px",
     // link: false
-  })
+  };
+  const [result, setResult] = useState("Hello!");
+  const [resultStyle, setResultStyle] = useState(textStyle);
 
-  const { color, textDecoration, fontWeight, fontSize, fontStyle } = resultStyle
-  const handleClick = (prop, value) => {
-    setResultStyle({ ...resultStyle, [prop]: value })
-  }
+  const handleClick = (prop, value, event) => {
+    setResultStyle({ ...resultStyle, [prop]: value });
+    resultStyle[prop] !== textStyle[prop] &&
+      !event &&
+      setResultStyle(textStyle);
+  };
+
   return (
     <div>
-      <form style={{ margin: '0 auto' }} onSubmit={() => {}}>
+      <form style={{ margin: "0 auto" }} onSubmit={() => {}}>
         <div className={styles.all}>
           <div className={styles.settings}>
             <select
@@ -27,7 +31,7 @@ export const TextareaForm = () => {
               id="size"
               className={styles.size}
               onChange={(e) => {
-                handleClick('fontSize', e.target.value)
+                handleClick("fontSize", e.target.value, e);
               }}
             >
               <option>10px</option>
@@ -40,9 +44,9 @@ export const TextareaForm = () => {
               id="color"
               type="color"
               name="color"
-              className={styles.color}
+              // className={styles.color}
               onChange={(e) => {
-                handleClick('color', e.target.value)
+                handleClick("color", e.target.value, e);
               }}
             />
             <button
@@ -51,7 +55,7 @@ export const TextareaForm = () => {
               name="bold"
               className={styles.bold}
               onClick={() => {
-                handleClick('fontWeight', '1000')
+                handleClick("fontWeight", "1000");
               }}
             >
               B
@@ -62,7 +66,7 @@ export const TextareaForm = () => {
               name="cursiv"
               className={styles.cursiv}
               onClick={() => {
-                handleClick('fontStyle', 'italic')
+                handleClick("fontStyle", "italic");
               }}
             >
               C
@@ -72,22 +76,22 @@ export const TextareaForm = () => {
               name="emphatic"
               className={styles.emphatic}
               onClick={() => {
-                handleClick('textDecoration', 'underline')
+                handleClick("textDecoration", "underline");
               }}
             >
-              E
+            
             </button>
             <button type="button" name="link">
               link
             </button>
-            <input type="file" name="download" />{' '}
+            <input type="file" name="download" />{" "}
           </div>
           <div>
             <textarea
               className={styles.textarea}
               onChange={(e) => setResult(e.target.value)}
               style={resultStyle}
-              placeholder={'type...'}
+              placeholder={"type..."}
             />
             <button type="submit">Submit</button>
           </div>
@@ -95,5 +99,5 @@ export const TextareaForm = () => {
       </form>
       <RenderResultArea text={result} style={{ ...resultStyle }} />
     </div>
-  )
-}
+  );
+};
