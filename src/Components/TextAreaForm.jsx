@@ -14,7 +14,7 @@ export const TextareaForm = () => {
   const [result, setResult] = useState("Hello!");
   const [resultStyle, setResultStyle] = useState(textStyle);
 
-  const handleClick = (prop, value, event) => {
+  const handle = (prop, value, event) => {
     setResultStyle({ ...resultStyle, [prop]: value });
     resultStyle[prop] !== textStyle[prop] &&
       !event &&
@@ -31,7 +31,7 @@ export const TextareaForm = () => {
               id="size"
               className={styles.size}
               onChange={(e) => {
-                handleClick("fontSize", e.target.value, e);
+                handle("fontSize", e.target.value, e);
               }}
             >
               <option>10px</option>
@@ -46,7 +46,7 @@ export const TextareaForm = () => {
               name="color"
               // className={styles.color}
               onChange={(e) => {
-                handleClick("color", e.target.value, e);
+                handle("color", e.target.value, e);
               }}
             />
             <button
@@ -55,7 +55,7 @@ export const TextareaForm = () => {
               name="bold"
               className={styles.bold}
               onClick={() => {
-                handleClick("fontWeight", "1000");
+                handle("fontWeight", "1000");
               }}
             >
               B
@@ -66,7 +66,7 @@ export const TextareaForm = () => {
               name="cursiv"
               className={styles.cursiv}
               onClick={() => {
-                handleClick("fontStyle", "italic");
+                handle("fontStyle", "italic");
               }}
             >
               C
@@ -76,7 +76,7 @@ export const TextareaForm = () => {
               name="emphatic"
               className={styles.emphatic}
               onClick={() => {
-                handleClick("textDecoration", "underline");
+                handle("textDecoration", "underline");
               }}
             >
             E
