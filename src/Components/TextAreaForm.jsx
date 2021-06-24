@@ -18,8 +18,8 @@ export const TextareaForm = () => {
     setResultStyle({ ...resultStyle, [prop]: value });
     resultStyle[prop] !== textStyle[prop] &&
       !event &&
-      setResultStyle(textStyle);
-  };
+     setResultStyle( {...resultStyle, [prop]: textStyle[prop] }
+    )}
 
   return (
     <div>
