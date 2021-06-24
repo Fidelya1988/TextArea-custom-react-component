@@ -1,3 +1,7 @@
+
+Input field for instant messengers and posts with functions for changing color, font and downloading files
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
