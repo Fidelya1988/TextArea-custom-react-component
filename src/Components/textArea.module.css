@@ -22,14 +22,14 @@ textarea {
   outline: none;
 }
 .all {
+  position: relative;
   width: 400px;
   margin: 0 auto;
 }
 .settings {
   display: flex;
   position: absolute;
-  margin-left: 200px;
-  width: 250px;
+  right: 0;
 }
 
 .btn {

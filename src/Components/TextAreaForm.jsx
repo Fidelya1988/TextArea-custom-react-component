@@ -34,66 +34,72 @@ export const TextareaForm = () => {
           <span>
             <span>
               <div className={styles.settings}>
-                <select
-                  name="size"
-                  id="size"
-                  className={styles.size}
-                  onChange={(e) => {
-                    handle('fontSize', e.target.value)
-                  }}
-                >
-                  <option>10px</option>
-                  <option>12px</option>
-                  <option>14px</option>
-                  <option>16px</option>
-                  <option>20px</option>
-                </select>
-                <input
-                  id="color"
-                  type="color"
-                  name="color"
-                  className={styles.color}
-                  onChange={(e) => {
-                    handle('color', e.target.value)
-                  }}
-                />
+                <div style={{ display }}>
+                  <select
+                    name="size"
+                    id="size"
+                    className={styles.size}
+                    onChange={(e) => {
+                      handle('fontSize', e.target.value)
+                    }}
+                  >
+                    <option>10px</option>
+                    <option>12px</option>
+                    <option>14px</option>
+                    <option>16px</option>
+                    <option>20px</option>
+                  </select>
+                  <input
+                    id="color"
+                    type="color"
+                    name="color"
+                    className={styles.color}
+                    onChange={(e) => {
+                      handle('color', e.target.value)
+                    }}
+                  />
+                  <button
+                    id="bold"
+                    type="button"
+                    name="bold"
+                    className={styles.bold}
+                    onClick={() => {
+                      handle('fontWeight', '1000')
+                    }}
+                  >
+                    B
+                  </button>
+                  <button
+                    id="cursiv"
+                    type="button"
+                    name="cursiv"
+                    className={styles.cursiv}
+                    onClick={() => {
+                      handle('fontStyle', 'italic')
+                    }}
+                  >
+                    C
+                  </button>
+                  <button
+                    type="button"
+                    name="emphatic"
+                    className={styles.emphatic}
+                    onClick={() => {
+                      handle('textDecoration', 'underline')
+                    }}
+                  >
+                    E
+                  </button>
+                  <button type="button" name="link">
+                    link
+                  </button>
+                </div>
                 <button
-                  id="bold"
                   type="button"
-                  name="bold"
-                  className={styles.bold}
-                  onClick={() => {
-                    handle('fontWeight', '1000')
-                  }}
+                  className={styles.btnSettings}
+                  onClick={handlerSettings}
                 >
-                  B
-                </button>
-                <button
-                  id="cursiv"
-                  type="button"
-                  name="cursiv"
-                  className={styles.cursiv}
-                  onClick={() => {
-                    handle('fontStyle', 'italic')
-                  }}
-                >
-                  C
-                </button>
-                <button
-                  type="button"
-                  name="emphatic"
-                  className={styles.emphatic}
-                  onClick={() => {
-                    handle('textDecoration', 'underline')
-                  }}
-                >
-                  E
-                </button>
-                <button type="button" name="link">
-                  link
-                </button>
-                <button type="button" name="link">
-                  &#60;
+                  {isStyle ? '<' : '>'}
                 </button>
               </div>
               <textarea
