@@ -35,3 +35,10 @@ textarea {
 .btn {
   border: none;
 }
+.btnSettings {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.btnSettings:hover {
+  background-color: rgba(0, 0, 0, 0.288);
+}
