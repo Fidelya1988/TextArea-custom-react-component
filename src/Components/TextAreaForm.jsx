@@ -89,7 +89,7 @@ export const TextareaForm = () => {
                       handle('textDecoration', 'underline')
                     }}
                   >
-                    E 
+                    E
                   </button>
                   <button type="button" name="link">
                     link
