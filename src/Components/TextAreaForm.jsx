@@ -26,6 +26,7 @@ export const TextareaForm = () => {
   }
 
   const display = isStyle ? 'block' : 'none'
+  const backgroundColor = !isStyle ? '' : 'rgba(0, 0, 0, 0.288)'
 
   return (
     <div>
@@ -98,6 +99,7 @@ export const TextareaForm = () => {
                   type="button"
                   className={styles.btnSettings}
                   onClick={handlerSettings}
+                  style={{ backgroundColor }}
                 >
                   {isStyle ? '<' : '>'}
                 </button>
