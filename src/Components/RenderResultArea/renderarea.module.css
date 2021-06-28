@@ -1,6 +1,5 @@
 .area {
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
-    display: block;
+  height: 150px;
+  border: 1px solid black;
+  display: block;
 }

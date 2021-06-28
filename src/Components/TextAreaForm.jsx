@@ -25,97 +25,94 @@ export const TextareaForm = () => {
     setIsStyle(!isStyle)
   }
 
-  const display = isStyle ? 'block' : 'none'
+  const display = isStyle ? 'flex' : 'none'
   const backgroundColor = !isStyle ? '' : 'rgba(0, 0, 0, 0.288)'
 
   return (
-    <div>
+    <div className={styles.container}>
       <form style={{ margin: '0 auto' }} onSubmit={() => {}}>
         <div className={styles.all}>
           <span>
-            <span>
-              <div className={styles.settings}>
-                <div style={{ display }}>
-                  <select
-                    name="size"
-                    id="size"
-                    className={styles.size}
-                    onChange={(e) => {
-                      handle('fontSize', e.target.value)
-                    }}
-                  >
-                    <option>10px</option>
-                    <option>12px</option>
-                    <option>14px</option>
-                    <option>16px</option>
-                    <option>20px</option>
-                  </select>
-                  <input
-                    id="color"
-                    type="color"
-                    name="color"
-                    className={styles.color}
-                    onChange={(e) => {
-                      handle('color', e.target.value)
-                    }}
-                  />
-                  <button
-                    id="bold"
-                    type="button"
-                    name="bold"
-                    className={styles.bold}
-                    onClick={() => {
-                      handle('fontWeight', '1000')
-                    }}
-                  >
-                    B
-                  </button>
-                  <button
-                    id="cursiv"
-                    type="button"
-                    name="cursiv"
-                    className={styles.cursiv}
-                    onClick={() => {
-                      handle('fontStyle', 'italic')
-                    }}
-                  >
-                    C
-                  </button>
-                  <button
-                    type="button"
-                    name="emphatic"
-                    className={styles.emphatic}
-                    onClick={() => {
-                      handle('textDecoration', 'underline')
-                    }}
-                  >
-                    E
-                  </button>
-                  <button type="button" name="link">
-                    link
-                  </button>
-                </div>
-                <button
-                  type="button"
-                  className={styles.btnSettings}
-                  onClick={handlerSettings}
-                  style={{ backgroundColor }}
-                >
-                  {isStyle ? '<' : '>'}
-                </button>
-              </div>
-              <textarea
-                className={styles.textarea}
-                onChange={(e) => setResult(e.target.value)}
-                style={resultStyle}
-                placeholder={'type...'}
+            <div className={styles.settings} style={{ display }}>
+              <select
+                name="size"
+                id="size"
+                className={styles.btn}
+                onChange={(e) => {
+                  handle('fontSize', e.target.value)
+                }}
+              >
+                <option>10px</option>
+                <option>12px</option>
+                <option>14px</option>
+                <option>16px</option>
+                <option>20px</option>
+              </select>
+              <input
+                id="color"
+                type="color"
+                name="color"
+                className={styles.btn}
+                onChange={(e) => {
+                  handle('color', e.target.value)
+                }}
               />
-            </span>
+              <button
+                id="bold"
+                type="button"
+                name="bold"
+                className={styles.btn}
+                onClick={() => {
+                  handle('fontWeight', '1000')
+                }}
+              >
+                B
+              </button>
+              <button
+                id="cursiv"
+                type="button"
+                name="cursiv"
+                className={styles.btn}
+                onClick={() => {
+                  handle('fontStyle', 'italic')
+                }}
+              >
+                C
+              </button>
+              <button
+                type="button"
+                name="emphatic"
+                className={styles.btn}
+                onClick={() => {
+                  handle('textDecoration', 'underline')
+                }}
+              >
+                E
+              </button>
+              <button className={styles.btn} type="button" name="link">
+                link
+              </button>
+            </div>
+            <button
+              type="button"
+              className={styles.btnSettings}
+              onClick={handlerSettings}
+              style={{ backgroundColor }}
+            >
+              {isStyle ? '˅' : '˄'}
+            </button>
+            <textarea
+              className={styles.textarea}
+              onChange={(e) => setResult(e.target.value)}
+              style={resultStyle}
+              placeholder={'type...'}
+            />
+
             <button type="submit">Submit</button>
           </span>
         </div>
+        <RenderResultArea text={result} style={{ ...resultStyle }} />
       </form>
-      <RenderResultArea text={result} style={{ ...resultStyle }} />
     </div>
   )
 }
