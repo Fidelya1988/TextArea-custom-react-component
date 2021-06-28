@@ -1,9 +1,9 @@
 import styles from './textArea.module.css'
 
 
-export const TextStyleButtons =(props)=> {
+export const TextStyleButtons =({handle, display, handlerSettings, backgroundColor, isStyle})=> {
   return(
-    <div>
+
       <div className={styles.settings} style={{ display }}>
               <select
                 name="size"
@@ -64,15 +64,7 @@ export const TextStyleButtons =(props)=> {
                 link
               </button>
             </div>
-            <button
-              type="button"
-              className={styles.btnSettings}
-              onClick={handlerSettings}
-              style={{ backgroundColor }}
-            >
-              {isStyle ? '˅' : '˄'}
-            </button>
-           
-    </div>
+            
+ 
   )
 }
