@@ -1,7 +1,8 @@
 import styles from './textArea.module.css'
 
 
-export const TextStyleButtons =({handle, display, handlerSettings, backgroundColor, isStyle})=> {
+export const TextStyleButtons =({handle, isStyle})=> {
+  const display = isStyle ? "flex" : "none";
   return(
 
       <div className={styles.settings} style={{ display }}>
