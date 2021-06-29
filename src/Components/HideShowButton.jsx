@@ -1,12 +1,11 @@
 import styles from "./textArea.module.css";
 import { useState } from "react";
 
-export const HideShowButton = () => {
-  const [isStyle, setIsStyle] = useState(false);
-  const handlerSettings = () => {
-    setIsStyle(!isStyle);
-  };
-
+export const HideShowButton = ({
+  backgroundColor,
+  isStyle,
+  handlerSettings,
+}) => {
   return (
     <button
       type="button"
