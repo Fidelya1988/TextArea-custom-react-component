@@ -28,17 +28,13 @@ export const TextareaForm = () => {
     setIsStyle(!isStyle);
   };
 
-  const display = isStyle ? "flex" : "none";
-  const backgroundColor = !isStyle ? "" : "rgba(0, 0, 0, 0.288)";
-
   return (
     <div className={styles.container}>
       <form style={{ margin: "0 auto" }} onSubmit={() => {}}>
         <div className={styles.all}>
           <span>
-            <TextStyleButtons handle={handle} display={display} />
+            <TextStyleButtons handle={handle} isStyle={isStyle} />
             <HideShowButton
-              backgroundColor={backgroundColor}
               isStyle={isStyle}
               handlerSettings={handlerSettings}
             />
