@@ -15,12 +15,16 @@ export const TextareaForm = () => {
   const [result, setResult] = useState('Hello!')
   const [resultStyle, setResultStyle] = useState(textStyle)
   const [isStyle, setIsStyle] = useState(false)
+
   const handle = (prop, value, event) => {
     setResultStyle({ ...resultStyle, [prop]: value })
     resultStyle[prop] !== textStyle[prop] &&
       !event &&
       setResultStyle({ ...resultStyle, [prop]: textStyle[prop] })
   }
+
+  console.log(textStyle)
+  console.log(resultStyle)
 
   const handlerSettings = () => {
     setIsStyle(!isStyle)
@@ -34,8 +38,7 @@ export const TextareaForm = () => {
       <form style={{ margin: '0 auto' }} onSubmit={() => {}}>
         <div className={styles.all}>
           <span>
-            <TextStyleButtons handle = {handle} display={display}/>
-           
+            <TextStyleButtons handle={handle} display={display} />
             <button
               type="button"
               className={styles.btnSettings}
@@ -50,7 +53,6 @@ export const TextareaForm = () => {
               style={resultStyle}
               placeholder={'type...'}
             />
-
             <button type="submit">Submit</button>
           </span>
         </div>
